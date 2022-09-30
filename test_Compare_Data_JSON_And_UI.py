@@ -56,7 +56,7 @@ class TestCompare_Data_JSON_And_UI(unittest.TestCase):
 
         print('List of 2nd metric:', metric2_nums)
 
-    # Get data from page API
+    # Get data from json file
     @classmethod
     def test_2A_Get_Data_JSON(cls):
 
@@ -80,7 +80,7 @@ class TestCompare_Data_JSON_And_UI(unittest.TestCase):
         print("List of 1st metric in JSON:", metric1_nums_json)
         print("List of 2nd metric in JSON:", metric2_nums_json)
 
-    # Get data from page API with URL request
+    # Get data from API request
     @classmethod
     def test_2B_Get_Data_Request(cls):
 
@@ -118,7 +118,7 @@ class TestCompare_Data_JSON_And_UI(unittest.TestCase):
         print("List of 2nd metric in JSON:", metric2_json)
 
     @classmethod
-    def test_3A_Snapshot_Compare__Dates(cls):
+    def test_3A_Snapshot_Compare_Metric1(cls):
 
         try:
             # Metric #1
@@ -129,9 +129,7 @@ class TestCompare_Data_JSON_And_UI(unittest.TestCase):
             assert False, f"Snapshot metric 1 not comparable!"
 
     @classmethod
-    @allure.severity(allure.severity_level.CRITICAL)
-    @allure.story('Сравнение данных WS2 из JSON в Видимости / Группы запросов за 1 дату')
-    def test_3B_Snapshot_Compare_QueryGroup_Date_Compare_Metric_WS2(cls):
+    def test_3B_Snapshot_Compare_Metric2(cls):
 
         try:
             # Metric #2
